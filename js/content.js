@@ -1,9 +1,12 @@
 executeContentScript();
 
-$('video.video-stream.html5-main-video').on('play', function(e) { 
-    chrome.storage.local.set({'mirrorStatus':'disabled'});
-    executeContentScript()
-});
+$('html').on('ready', function(){
+    $('video.video-stream.html5-main-video').on('play', function(e) { 
+        chrome.storage.local.set({'mirrorStatus':'disabled'});
+        executeContentScript()
+    });
+})
+
 
 function executeContentScript(){
     //set  mirror status to disable
