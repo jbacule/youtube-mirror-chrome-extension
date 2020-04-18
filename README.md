@@ -1,4 +1,9 @@
-# youtube-mirror-chrome-extension
+# Youtube Mirror
 Mirror video in youtube.
+![image](/images/mainImage.png)
 
-![image](/images/icon.png)
+## Not Mirrored Video
+![image](/images/notmirrored.png)
+
+## Mirrored Video
+![image](/images/notmirrored.png)
