@@ -1,35 +1,28 @@
 {
     "name": "Youtube Mirror",
-    "version": "1.0.0",
+    "manifest_version": 3,
+    "version": "1.1.0",
     "author": "shujo",
-    "description": "Mirror videos in youtube",
+    "description": "Mirror video in youtube",
     "permissions": [
-      "storage",
-      "tabs",
-      "https://www.youtube.com/*"
+      "tabs"
     ],
+    "background": {
+      "service_worker": "background.js"
+    },
     "content_scripts": [
       {
+        "run_at": "document_end",
         "matches": [
-          "https://www.youtube.com/*"
+          "https://www.youtube.com/watch?*"
         ],
-        "js": ["js/jquery.js", "js/content.js"]
+        "js": ["content.js"]
       }
     ],
-    "browser_action": {
-      "default_icon": {
-        "16": "images/icon16.png",
-        "24": "images/icon32.png",
-        "32": "images/icon48.png"
-      },
-      "default_title": "Youtube Mirror",
-      "default_popup": "popup.html"
-    },
     "icons": {
       "16": "images/icon16.png",
       "32": "images/icon32.png",
       "48": "images/icon48.png",
       "128": "images/icon128.png"
-    },
-    "manifest_version": 2
+    }
   }
